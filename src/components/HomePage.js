@@ -9,6 +9,7 @@ const Parent = styled.div `
 `
 
 const HomePage = () => {
+  return ()
 };
 
 
