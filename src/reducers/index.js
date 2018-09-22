@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
-import fuelSavings from './fuelSavingsReducer';
-import 'semantic-ui-css/semantic.min.css';
+import { combineReducers } from 'redux'
+import modules from './modules'
+import 'semantic-ui-css/semantic.min.css'
 
 const rootReducer = combineReducers({
-  fuelSavings,
-});
+  ...modules.reducers
+})
 
-export default rootReducer;
+export default rootReducer
