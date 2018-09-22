@@ -166,7 +166,8 @@
       "plugin:react/recommended"
     ],
     "plugins": [
-      "react"
+      "react",
+      "styled-components"
     ],
     "parser": "babel-eslint",
     "parserOptions": {
