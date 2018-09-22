@@ -1,0 +1,20 @@
+{
+  "libs": [
+    "browser",
+    "ecmascript",
+    "react"
+  ],
+  "loadEagerly": [],
+  "plugins": {
+    "commonjs": {},
+    "node": {},
+    "requirejs": {},
+    "node_resolve": {},
+    "es_modules": {},
+    "webpack": {},
+    "modules": {},
+    "complete_strings": {}
+  },
+  "ecmaScript": true,
+  "ecmaVersion": 6
+}
