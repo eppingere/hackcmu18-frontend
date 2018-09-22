@@ -103,8 +103,8 @@ class CourseModule extends React.Component {
                     <List.Icon name='circle' size='large' verticalAlign='middle' />
                   </span>
                   <List.Content>
-                    <List.Header as='a'>{course.title}</List.Header>
-                    <List.Description as='a'>{course.description}</List.Description>
+                    <List.Header as='a'>{course.id}</List.Header>
+                    <List.Description as='a'>{course.name}</List.Description>
                   </List.Content>
                 </List.Item>
               ))

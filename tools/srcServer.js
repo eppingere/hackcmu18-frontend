@@ -16,7 +16,7 @@ const proxyConfig = {
   dev: {
     proxy: {
       '/api': {
-        target: 'http://localhost:19527',
+        target: 'http://128.237.123.149:5000',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

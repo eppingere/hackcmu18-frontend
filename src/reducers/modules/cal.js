@@ -24,7 +24,7 @@ const {state, reducer: genReducer, actions: genActions} = genModule({
     action: 'setTodos'
   },
   schedule: {
-    value: [],
+    value: {},
     type: SET_SCHEDULE,
     action: 'setSchedule'
   }

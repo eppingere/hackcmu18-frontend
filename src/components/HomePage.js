@@ -39,6 +39,7 @@ flex: none;
 font-weight: 700;
 font-size: 26px;
 padding: 16px;
+text-align: center;
 box-shadow: 0 3px 1px -2px rgba(0,0,0,.08),
       0 2px 2px 0 rgba(0,0,0,.03),
       0 1px 5px 0 rgba(0,0,0,.02);
