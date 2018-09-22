@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components'
+import MenuBar from './NavBar.js'
 import {
   Link
 } from 'react-router-dom';
@@ -9,7 +11,8 @@ const Parent = styled.div `
 `
 
 const HomePage = () => {
-  return ()
+  return (<Parent>
+  </Parent>)
 };
 
 
