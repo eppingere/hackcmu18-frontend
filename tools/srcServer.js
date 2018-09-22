@@ -10,6 +10,28 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from '../webpack.config.dev';
+import proxyMiddleware from 'http-proxy-middleware';
+
+const proxyConfig = {
+  dev: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:19527',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
+}
+
+let proxyMiddlewares = []
+if (proxyConfig && proxyConfig.dev && proxyConfig.dev.proxy) {
+  proxyMiddlewares = Object.keys(proxyConfig.dev.proxy).map(key => {
+    return proxyMiddleware(key, proxyConfig.dev.proxy[key])
+  })
+}
 
 const bundler = webpack(config);
 
@@ -24,6 +46,8 @@ browserSync({
 
     middleware: [
       historyApiFallback(),
+
+      ...proxyMiddlewares,
 
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath

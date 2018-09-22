@@ -8,6 +8,7 @@
   "plugins": {
     "commonjs": {},
     "node": {},
+    "jsx": {},
     "requirejs": {},
     "node_resolve": {},
     "es_modules": {},
