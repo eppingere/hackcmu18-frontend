@@ -55,6 +55,7 @@
     "babel-eslint": "9.0.0",
     "babel-jest": "23.4.2",
     "babel-loader": "8.0.0",
+    "babel-plugin-styled-components": "1.7.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.15",
     "browser-sync": "2.24.7",
     "chalk": "2.4.1",
