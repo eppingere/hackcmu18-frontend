@@ -2,6 +2,7 @@
 
 require('./favicon.ico')
 import './styles/styles.scss'
+import 'semantic-ui-css/semantic.min.css'
 
 import { render } from 'react-dom'
 import React from 'react'

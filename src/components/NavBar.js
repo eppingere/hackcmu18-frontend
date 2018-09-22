@@ -1,5 +1,5 @@
+import { Menu } from 'semantic-ui-react'
 import React, { PureComponent } from 'react'
-import { Input, Menu, Segment, Image } from 'semantic-ui-react'
 
 export default class MenuBar extends PureComponent {
 
@@ -11,7 +11,7 @@ export default class MenuBar extends PureComponent {
           <Menu.Item name='Quel' active={true}/>
           <Menu.Menu position='right'>
             <Menu.Item>
-                <i class = 'calendar outline icon'></i>
+                <i className='calendar outline icon' />
             </Menu.Item>
           </Menu.Menu>
         </Menu>

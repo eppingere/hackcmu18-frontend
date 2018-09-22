@@ -12,7 +12,7 @@ const REMOVE_TODO = 'REMOVE_TODO'
 
 const SET_SCHEDULE = 'SET_SCHEDULE'
 
-const {state, reducer, actions} = genModule({
+const {state, reducer: genReducer, actions: genActions} = genModule({
   courses: {
     value: [],
     type: SET_COURSES,
@@ -31,8 +31,8 @@ const {state, reducer, actions} = genModule({
 })
 
 export const module = packModule({
-  state, reducers: {
-    ...reducer,
+  state, reducer: {
+    ...genReducer,
     [ADD_COURSE] (state, {course}) {
       return {
         ...state,
@@ -57,8 +57,10 @@ export const module = packModule({
         todos: state.todos.filter(x => x.id !== id)
       }
     }
-  }, name: 'calendar', actions: {
-    ...actions,
+  },
+  name: 'cal',
+  actions: {
+    ...genActions,
     addCourse (course) {
       return {
         type: ADD_COURSE,
@@ -97,11 +99,10 @@ const getCourses = () => dispatch => api.getCourses ().then (result =>
 )
 
 const addCourse = course => dispatch => {
-  a.addCourse (course).then (() =>
-    api.addCourse (course).then (() =>
-      api.getCourses () (dispatch)
-    ).catch(() => dispatch (a.removeCourse (course.id)))
-  )
+  dispatch(a.addCourse (course))
+  api.addCourse (course).then (() =>
+    api.getCourses () (dispatch)
+  ).catch(() => dispatch (a.removeCourse (course.id)))
 }
 
 const removeCourse = id => dispatch => {
@@ -115,11 +116,10 @@ const getTodos = () => dispatch => api.getTodos ().then (result =>
 )
 
 const addTodo = todo => dispatch => {
-  a.addTodo (todo).then (() =>
-    api.addTodo (todo).then (() =>
-      api.getTodos () (dispatch)
-    ).catch(() => dispatch (a.removeTodo (todo.id)))
-  )
+  dispatch (a.addTodo (todo))
+  api.addTodo (todo).then (() =>
+    api.getTodos () (dispatch)
+  ).catch(() => dispatch (a.removeTodo (todo.id)))
 }
 
 const removeTodo = id => dispatch => {

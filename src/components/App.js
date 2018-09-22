@@ -5,7 +5,7 @@ import AboutPage from "./AboutPage";
 import FuelSavingsPage from "./containers/FuelSavingsPage";
 import HomePage from "./HomePage";
 import NotFoundPage from "./NotFoundPage";
-import MenuBar from './NavBar.js'
+import NavBar from './NavBar.js'
 import PropTypes from "prop-types";
 import React from "react";
 import styled from 'styled-components'
@@ -16,33 +16,38 @@ import { hot } from "react-hot-loader";
 // component at the top-level.
 
 const Container = styled.div`
-display: flex;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
 `
 const Nav = styled.div`
-flex: 1 1 auto;
+  flex: none;
 `
 
 const Main = styled.div`
-flex: 1 1 auto;
+  flex: 1 0 auto;
+  display: flex;
 `
 
 
 class App extends React.Component {
   render() {
-    const activeStyle = { color: 'blue' };
+    /* const activeStyle = { color: 'blue' }; */
     return (
       <Container>
 
-        <Nav><MenuBar></MenuBar></Nav>
+        <Nav>
+          <NavBar></NavBar>
+        </Nav>
 
-      <Main>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/fuel-savings" component={FuelSavingsPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Main>
+        <Main>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/fuel-savings" component={FuelSavingsPage} />
+            <Route path="/about" component={AboutPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </Main>
       </Container>
     );
   }

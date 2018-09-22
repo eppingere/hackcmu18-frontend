@@ -18,6 +18,21 @@ body {
   font-weight: 300;
 }
 
+*::-webkit-scrollbar {
+  width: 0px !important;  /* remove scrollbar space */
+  background: transparent !important;  /* optional: just make scrollbar invisible */
+}
+
+*::-webkit-scrollbar-track {
+  width: 0px !important;  /* remove scrollbar space */
+  background: transparent !important;  /* optional: just make scrollbar invisible */
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 0px !important;  /* remove scrollbar space */
+  background: transparent !important;  /* optional: just make scrollbar invisible */
+}
+
 td {
 	padding: 12px;
 }
